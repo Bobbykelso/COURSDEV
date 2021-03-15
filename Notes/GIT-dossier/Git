@@ -1,0 +1,201 @@
+/* Git */ est une console pour obtenir un terminal linux
+ton répertoire d'origine sera quelque chose comme /c/Users/MyName
+
+
+Pour pouvoir publier un code du GIT il faut se co sur github puis mettre dans urld
+https://gist.github.com/
+
+Ligne de commande:
+
+    "pwd"   =   ou suis-je/ 
+    ex: 
+        $ pwd
+        /c/Users/gimat/OneDrive/Bureau
+
+    "cd .."  =  cd pour change directory   et  .. pour dire au dessus dans l'arborescence ou plutot le dossier  contenant le dossier dans lequel je suis.   SOIT "cd .." =  aller au dessus       
+     ex:$ cd ..
+        gimat@LAPTOP-U864SI52 MINGW64 ~/OneDrive
+        $ pwd
+        /c/Users/gimat/OneDrive
+
+    "ls" = display list  SOIT donne la liste des dossier qu'on peut trouver la où je suis
+    ex: 
+       $ ls
+        Bureau/      Images/           'Prise en main de OneDrive.pdf'
+     Documents/  'Pièces jointes'/   desktop.ini
+
+***relative path****
+    "cd bureau" = change direction bureau SOIT va dans le dossier bureau  ce moyen sapelle le relative path il fait donc en fonction de la ou on est
+***absolute path****
+    "cd /c/Users" = absolute path to users / en gros on lui fait tout le chemin pour acceder ou en veux aller  il ne fait donc pas attention d'ou on est
+    
+          
+          
+          
+            ******La commande ls te permet d'afficher le contenu d'un répertoire.*******
+    Quelques exemples, en supposant que tu viens de lancer le terminal :
+
+    "ls" 
+    affiche les fichiers et répertoires contenus dans le répertoire courant, celui dans lequel tu es actuellement.
+
+    "ls ."
+     fait la même chose ! Le symbole . signifie "le répertoire actuel".
+
+    "ls -a" affiche le contenu du répertoire, mais en incluant les fichiers cachés. Ceux-ci sont précédés du caractère . pour les différencier des fichiers "normaux". Attention, ici, le . est annexé au nom du fichier, il n'a pas la même signification que le symbole . pris isolément.
+
+    "ls Images" et "ls ./Images" affiche le contenu du dossier Images.
+
+    "ls /home/wilder" est une autre façon d'afficher le contenu de ton répertoire personnel, qui se trouve être le répertoire par défaut au lancement du terminal.
+
+    "ls /home" te permet d'afficher la liste des répertoires associés à chaque utilisateur du système.
+
+    "ls .." te donnera le même résultat ! Le .. signifie le répertoire parent. Celui qui se trouve juste au-dessus dans l'arborescence. /home est au-dessus de /home/wilder.
+
+    "ls /bin" affiche le contenu d'un répertoire contenant les commandes de base du système (par exemple, la commande ls elle-même !).
+
+    "ls -l /bin" fait la même chose, mais donne plus de détails, comme par exemple qui possède les fichiers, quand ils ont été modifiés pour la dernière fois, et ainsi de suite.
+
+
+        
+            ****Changer de répertoire avec cd***
+
+    L'ordre cd signifie changer de répertoire et te permet donc de changer votre répertoire de travail.
+
+    Quelques exemples, à essayer dans l'ordre :
+
+    cd Images : se déplacer sous le dossier Images (vérifier avec pwd).
+
+    cd .. : remonter dans le répertoire parent/home/wilder.
+
+    cd /opt : aller sous un répertoire en précisant son chemin absolu. L'emplacement de l'arborescence, c'est-à-dire sa position par rapport à la racine de l'arborescence.
+
+    cd ../home/wilder : d'abord, retourne à la racine (via ..) et de là, retourne au fichier /home/wilder.
+
+    cd /usr/bin : aller dans un autre répertoire, celui-ci étant un autre répertoire contenant des commandes (vérifier avec ls).
+
+    cd sans paramètres : retour au répertoire personnel de l'utilisateur courant.
+
+    cd ~ Même chose.
+
+    cd ~/Music : va sous ton dossier Music (quel que soit le dossier dans lequel tu étais avant).
+
+    Signification de ~
+
+    Le caractère ~ (appelé tilde) représente le répertoire personnel de l'utilisateur actuel.
+    C'est un moyen rapide d'accéder à l'adresse /home/username (remplacer le username par celui de l'utilisateur actuel).
+
+    C'est très pratique, surtout si tu es dans un répertoire complètement différent et que tu veux consulter un élément de ton dossier personnel.
+    Par exemple, où que nous soyons, ls ~/Downloads te permet de lister le contenu de votre dossier Downloads.
+
+
+
+*************fichiers et dossiers******************
+
+    "mkdir" =  makedirectory  SOIT creer un repertoire
+    ex: 
+        mkdir quests
+        mkdir -p quests/shell/vegetables quests/shell/fruits
+        mkdir quests/shell/remove-me quests/shell/delete-me
+        ls quests/shell
+
+     La commande de la deuxième ligne échouerait sans le flag -p parce que le répertoire quests/shell n'existe pas; -p indique à mkdir de créer les répertoires intermédiaires si ceux-ci n'existent pas.  
+
+
+
+    "rmdir" = removedirectory   SOIT supprimer des répertoire.
+    ex:
+        rmdir quests/shell/remove-me quests/shell/delete-me
+        rmdir ne fonctionne que sur des répertoires vides!
+
+
+
+    "touch"  = créer des fichiers 
+    ex: 
+        touch apple courgette       ça va m créer deux fichiers vide apple et courgette la ou je suis
+    "touch modifie le timestamp du fichier (l'heure de dernier modif )
+
+
+
+    ";" te permet de lancer plusieurs commandes en une seule ligne. a mettre pour séparer les commandes.
+
+
+
+
+    "cp"   =  copy    a utilisé avec deux paramétre , source et destination
+        ex: cp apple banana
+        cp apple fruits/orange
+        ls ; ls fruits
+
+        Nous créons ici deux copies du fichier apple, qui est la source dans les deux cas, la destination étant à chaque fois un nouveau fichier : banana or orange, chacun étant une copie exacte de apple.
+
+     Copier plusieurs fichiers dans un repertoire
+     Ici, nous créons une copie de chacun des fruits dans le répertoire fruits :
+
+        Ici, nous créons une copie de chacun des fruits dans le répertoire fruits :
+
+
+    cp ap* banana fruits/
+        ls fruits
+        Remarques :
+
+        Lorsque l'ordre cp reçoit plus de deux arguments, il s'attend à ce que le dernier, la destination, soit un répertoire.
+        Le / ajouté aux fruits est optionnel (même sans lui, cp déterminera si la cible est un fichier ou un répertoire).
+        Le concept des caractères wildcard: des caractères spéciaux permettent de spécifier simplement des ensembles de fichiers. Le caractère * seul signifie "tous les fichiers " ; ap* signifie "tous les fichiers commençant par ap" (donc "apple" et "apricot" correspondent).
+
+
+    cp -R fruits copy-of-fruits /tmp/
+        Concrètement, cp copie d'abord le répertoire donné comme argument source (ici fruits). Grâce à l'argument -R, si le répertoire source contient des fichiers, ceux-ci sont copiés. S'il contient des répertoires, il les copie aussi, puis "descend" dans chacun de ces répertoires, et copie leur contenu, et ainsi de suite.
+
+        Cela fonctionne également avec des répertoires sources multiples, et dans ce cas tu devras donner un répertoire existant comme argument de destination. Ici, nous allons copier fruits et copy-of-fruits dans le dossier /tmp qui contient les fichiers temporaires du système. Comme son contenu est effacé chaque fois que la machine est redémarrée, il peut être "pollué" sans crainte !
+
+
+
+    "rm" = remove  (attention suppression immediate et définitive (pas de corbeille))
+
+    1) suppreimer les doublons
+
+    "rm ap* banana"   
+
+    2) supprimer récursivement un répertoire
+
+    "rm -r copy-of-fruits" 
+        Comme le rm est immédiat et définitif, tu dois faire attention lorsque tu l'utilises avec le -r et/ou avec la wildcard *.
+        Il est en effet trop facile de se tromper et d'effacer par inadvertance tout un répertoire et son contenu.
+
+
+
+    "mv"  = move  sert a Déplacer et/ou renommer
+
+        Déplacer: mv ca* parsnip courgette vegetables/
+        Renommer: mv fruits/orange fruits/grapefruit
+        Déplacer et renommer : mv vegetables/courgette fruits/kiwi
+
+        mv est utilisé avec deux ou plusieurs arguments, tout comme cp - le dernier étant la destination, et le(s) précédent(s) la (ou les) source(s).
+
+
+    "echo" = permet d'ecrire du texte 
+        ex:
+        echo "Je suis moisi" > vieuxtacos.txt
+
+    "cat" = permet de lire le fichier text
+        ex: 
+        cat vieuxtacos.txt 
+        donne = Je suis moisi
+
+*******raccourcis**********
+        "Tu peux aussi utiliser les raccourcis Ctrl+A et Ctrl+E pour aller automatiquement au début et à la fin de la ligne.
+
+
+        "tab"         Crée les dossiers suivants dans le sous-dossier ~/Documents/chalet :
+
+        armure
+        armoires
+        etageres
+        Ensuite, accède au dossier chalet et commence à écrire la commande suivante (sans appuyer sur la touche Entrée à la fin) :
+        cd a
+        À la fin de la ligne, appui sur la touche Tab deux fois : la console devrait te présenter tous les dossiers commençant par a.
+
+
+
+*****
+  "sudo"   = authorisation admin / il faut la mettre avant tout n'importe quel ligne qd ça bloque pour ça
