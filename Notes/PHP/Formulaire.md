@@ -9,18 +9,18 @@
    ...Divers champs de formulaire (input, checkbox, radios…)...
 
 </form>
-
+```
 - action : définit OU (URL) sont envoyées les données(par défaut la page sur laquelle on se trouve),
 - method : définit la méthode HTTP utilisée pour envoyer des données (GET par défaut ou POST)
 - enctype : définit la méthode d'encodage des données (dans le cas d'UPLOAD il DOIT obligatoirement être "multipart/form-data")
-```
+
 
 Liste des champs du formulaire correspondant à un élément HTML spécifique : 
-```php
+
 https://www.w3schools.com/html/html_form_elements.asp
 
 Un label doit obligatoirement être relié à son champ, via son attribut for et l’attribut id du champ. 
-
+```php
 <label for="firstname">Firstname</label>
 <input type="text"
        id="firstname"
@@ -30,8 +30,7 @@ Un label doit obligatoirement être relié à son champ, via son attribut for et
        pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"
        minlength="1"
        maxlength="20"
-       size="10"
->
+       size="10">
 ```
 Une fois le  formulaire complété avec toutes les données requises, il faut que l’utilisateur puisse soumettre le formulaire et transmettre les données saisies.
 
@@ -156,9 +155,9 @@ if (!empty($errors)) {
 La fonction filter_var($value, FILTER, FLAG)retournera false si la valeur passée en premier argument n’est pas acceptée par le filtre indiqué en deuxième paramètre. Certains filtres peuvent être complétés d’un drapeau (optionnel en 3e position).
  
 Il est par exemple possible de :
-• contrôler le format d’une adresse mail xxx@xxx.tld (FILTER_VALIDATE_EMAIL)
-• contrôler le format d’une url http://xxxxx (FILTER_VALIDATE_URL) ⚠️
-• convertir une chaîne de caractère en son équivalent booléen. (FILTER_VALIDATE_BOOLEAN)
+- contrôler le format d’une adresse mail xxx@xxx.tld (FILTER_VALIDATE_EMAIL)
+- contrôler le format d’une url http://xxxxx (FILTER_VALIDATE_URL) ⚠️
+- convertir une chaîne de caractère en son équivalent booléen. (FILTER_VALIDATE_BOOLEAN)
 ```php
 $email = "yoda@wildcodeschool-com";
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
